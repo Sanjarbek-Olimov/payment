@@ -6,7 +6,8 @@ import 'package:payment/pages/payment_page.dart';
 class StatusPage extends StatefulWidget {
   static const String id = "status_page";
 
-  const StatusPage({Key? key}) : super(key: key);
+
+  StatusPage({Key? key}) : super(key: key);
 
   @override
   _StatusPageState createState() => _StatusPageState();
@@ -15,7 +16,7 @@ class StatusPage extends StatefulWidget {
 class _StatusPageState extends State<StatusPage> {
   void popUntilRoot() {
     while (Navigator.of(context).canPop()) {
-      Navigator.pop(context);
+      Navigator.pop(context, "Success");
     }
   }
 

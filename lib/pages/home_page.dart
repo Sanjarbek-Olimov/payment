@@ -11,8 +11,9 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   
-  void _openPayment(){
-    Navigator.of(context).pushNamed(PaymentPage.id);
+  void _openPayment() async {
+    var result = await Navigator.of(context).pushNamed(PaymentPage.id);
+    print(result);
   }
   
   @override
