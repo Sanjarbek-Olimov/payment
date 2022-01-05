@@ -14,6 +14,12 @@ class StatusPage extends StatefulWidget {
 }
 
 class _StatusPageState extends State<StatusPage> {
+
+  void _goHome(){
+    Navigator.pop(context, "Success");
+  }
+
+
   void popUntilRoot() {
     while (Navigator.of(context).canPop()) {
       Navigator.pop(context, "Success");
@@ -39,7 +45,8 @@ class _StatusPageState extends State<StatusPage> {
               child: ElevatedButton(
                 onPressed: () {
                   // Navigator.popUntil(context, (route) => route.isFirst);
-                  popUntilRoot();
+                  _goHome();
+                  // popUntilRoot();
                 },
                 child: const Text(
                   "Success",

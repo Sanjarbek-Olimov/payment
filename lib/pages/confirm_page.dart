@@ -12,8 +12,12 @@ class ConfirmPage extends StatefulWidget {
 
 class _ConfirmPageState extends State<ConfirmPage> {
 
-  void _openStatus(){
-    Navigator.of(context).pushNamed(StatusPage.id);
+  void _openStatus() async {
+    var result = await Navigator.of(context).pushNamed(StatusPage.id);
+    if(result != null && result == "Success"){
+      print("Confirm Page: "+ result.toString());
+      Navigator.pop(context, result);
+    }
   }
 
   @override

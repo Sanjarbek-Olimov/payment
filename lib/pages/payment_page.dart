@@ -31,9 +31,14 @@ class _PaymentPageState extends State<PaymentPage> {
     FlutterWindowManager.clearFlags(FlutterWindowManager.FLAG_SECURE);
   }
 
-  void _openConfirm() {
-    Navigator.of(context).pushNamed(ConfirmPage.id);
+  void _openConfirm() async{
+
     FlutterWindowManager.clearFlags(FlutterWindowManager.FLAG_SECURE);
+    var result = await Navigator.of(context).pushNamed(ConfirmPage.id);
+    if(result != null && result == "Success") {
+      print("Payment Page: "+ result.toString());
+      Navigator.pop(context, result);
+    }
   }
 
   @override
